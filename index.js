@@ -59,14 +59,17 @@ app.post('/mensagens', async (req, res) => {
 });
 
 // PUT: UPDATE (editar um registro)
-app.put('/mensagens/:id', (req, res) => {
-  const id = req.params.id - 1;
+app.put('/mensagens/:id', async (req, res) => {
+  const id = req.params.id;
 
-  const mensagem = req.body.mensagem;
+  const mensagem = req.body;
 
-  mensagens[id] = mensagem;
+  await mensagensCollection.updateOne(
+    { _id: ObjectId(id) },
+    { $set: mensagem }
+  );
 
-  res.send('Mensagem atualizada com sucesso.');
+  res.send('Mensagem editada com sucesso.');
 });
 
 // DELETE: DELETE (remover um registro)
