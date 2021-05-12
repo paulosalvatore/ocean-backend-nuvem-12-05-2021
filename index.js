@@ -44,6 +44,8 @@ app.get('/mensagens/:id', async (req, res) => {
 
   if (!mensagem) {
     res.send('Mensagem não encontrada.');
+
+    return;
   }
 
   res.send(mensagem);
