@@ -2,10 +2,9 @@ const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
 
 (async () => {
+const url = 'mongodb+srv://admin:ECnrGWIZ9YBYUHpE@cluster0.zwmgv.mongodb.net/ocean_db?retryWrites=true&w=majority';
 
-const url = 'mongodb://localhost:27017';
-
-const dbName = 'ocean_bancodados_11_05_2021';
+const dbName = 'ocean_db';
 
 console.info('Conectando ao banco de dados...');
 
