@@ -69,4 +69,6 @@
 
 - Pronto! Agora é só subir as informações de environment direto no Heroku e os seus dados de acesso ao banco não estarão mais expostos no GitHub
 
+  - **Referência:** https://devcenter.heroku.com/articles/config-vars
+
 - Você também pode colocar o seu repositório como privado e ainda sim conectá-lo ao Heroku sem problemas (isso também para proteger o seu código).
