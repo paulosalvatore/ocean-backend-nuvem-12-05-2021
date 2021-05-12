@@ -37,10 +37,10 @@ app.get('/mensagens', async (req, res) => {
 });
 
 // GET: READ SINGLE (exibir apenas um registro)
-app.get('/mensagens/:id', (req, res) => {
-  const id = req.params.id - 1;
+app.get('/mensagens/:id', async (req, res) => {
+  const id = req.params.id;
 
-  const mensagem = mensagens[id];
+  const mensagem = await mensagensCollection.findOne({ _id: ObjectId(id) });
 
   if (!mensagem) {
     res.send('Mensagem não encontrada.');
