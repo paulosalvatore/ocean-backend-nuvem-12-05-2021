@@ -73,10 +73,10 @@ app.put('/mensagens/:id', async (req, res) => {
 });
 
 // DELETE: DELETE (remover um registro)
-app.delete('/mensagens/:id', (req, res) => {
-  const id = req.params.id - 1;
+app.delete('/mensagens/:id', async (req, res) => {
+  const id = req.params.id;
 
-  delete mensagens[id];
+  await mensagensCollection.deleteOne({ _id: ObjectId(id) });
 
   res.send('Mensagem removida com sucesso.');
 });
