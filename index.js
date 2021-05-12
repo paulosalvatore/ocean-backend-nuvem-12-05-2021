@@ -50,14 +50,12 @@ app.get('/mensagens/:id', async (req, res) => {
 });
 
 // POST: CREATE (criar um registro)
-app.post('/mensagens', (req, res) => {
-  const mensagem = req.body.mensagem;
+app.post('/mensagens', async (req, res) => {
+  const mensagem = req.body;
 
-  mensagens.push(mensagem);
+  await mensagensCollection.insertOne(mensagem);
 
-  const id = mensagens.length;
-
-  res.send(`Mensagem '${id}' criada com sucesso.`);
+  res.send(mensagem);
 });
 
 // PUT: UPDATE (editar um registro)
