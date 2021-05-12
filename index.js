@@ -23,8 +23,6 @@ app.get('/hello', function (req, res) {
   res.send('Hello World');
 });
 
-const mensagens = ['Essa é a primeira mensagem!', 'Essa é a segunda mensagem!'];
-
 const mensagensCollection = db.collection('mensagens');
 
 // CRUD (Create, Read, Update, Delete)
