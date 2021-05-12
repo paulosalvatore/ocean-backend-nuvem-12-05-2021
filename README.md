@@ -14,33 +14,17 @@
 ## Tópicos
 
 - Apresentação dos ecossistemas de cloud, falando um pouco sobre AWS, Azure, Google Cloud, entre outros
-
 - Criando o repositório do projeto no GitHub
-
 - Subindo os arquivos desenvolvidos no GitHub
-
-- Criação da conta no Heroku - Integrando o repositório do GitHub no Heroku
-
-- Ativando o deploy automático - Primeiro deploy da aplicação na nuvem
-
-- Testando a aplicação com o Postman: criando environments para alterar o ambiente das requisições
-
+- Criação da conta no Heroku
+- Integrando o repositório do GitHub no Heroku
+- Ativando o deploy automático
+- Primeiro deploy da aplicação na nuvem
+- Testando a aplicação com o Thunder Client
 - Criação da conta na MongoDB Atlas
-
 - Criando a base de dados na nuvem
-
 - Entendendo a string de conexão do MongoDB
-
 - Visualizando a base de dados criada
-
 - Criação da collection
-
 - Implementando a base de dados da nuvem na aplicação backend
-
 - Testando todos os serviços online
-
-
-## O que é banco de dados?
-
-- 
-
