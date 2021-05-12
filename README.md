@@ -28,3 +28,45 @@
 - Criação da collection
 - Implementando a base de dados da nuvem na aplicação backend
 - Testando todos os serviços online
+
+## Configurando o arquivo `env`
+
+- Instalar a dependência `dotenv`
+
+  - ```bash
+    npm i dotenv
+    ```
+
+- Criar um arquivo na raiz do projeto chamado `.env.example` com a estrutura do seu arquivo de environment
+
+- Duplique esse arquivo e renomeie o novo arquivo para `.env`
+
+- Preencha esse novo arquivo com as informações da conexão:
+
+  - ```bash
+    DB_HOST=cluster0.zwmgv.mongodb.net
+    DB_USER=admin
+    DB_PASSWORD=ECnrGWIZ9YBYUHpE
+    DB_NAME=ocean_db
+    ```
+
+- Abra o arquivo `index.js` e faça o import do `dotenv`, da seguinte forma:
+
+  - ```js
+    require('dotenv').config();
+    ```
+
+- Em seguida, substitua sua `string` de conexão pelo seguinte trecho:
+
+  - ```js
+    const dbUser = process.env.DB_USER;
+    const dbPassword = process.env.DB_PASSWORD;
+    const dbHost = process.env.DB_HOST;
+    const dbName = process.env.DB_NAME;
+    
+    const url = `mongodb+srv://${dbUser}:${dbPassword}@${dbHost}/${dbName}?retryWrites=true&w=majority`;
+    ```
+
+- Pronto! Agora é só subir as informações de environment direto no Heroku e os seus dados de acesso ao banco não estarão mais expostos no GitHub
+
+- Você também pode colocar o seu repositório como privado e ainda sim conectá-lo ao Heroku sem problemas (isso também para proteger o seu código).
